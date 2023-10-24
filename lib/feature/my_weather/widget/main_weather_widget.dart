@@ -26,9 +26,6 @@ class _OnlineWeatherWidgetState extends State<MainWeatherWidget> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    if (offlineWeatherData == null) {
-      log("offline data is null");
-    }
 
     // FETCH WEATHER DATA FROM API
     context.read<MyWeatherCubit>().fetchWeatherData(widget.lat, widget.long);
@@ -45,6 +42,9 @@ class _OnlineWeatherWidgetState extends State<MainWeatherWidget> {
       setState(() {
         offlineWeatherData = weatherData;
       });
+      if (offlineWeatherData != null) {
+        log("offline data is not null");
+      }
     } catch (exception) {
       // do something
     }

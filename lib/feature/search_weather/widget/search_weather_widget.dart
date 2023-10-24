@@ -22,11 +22,11 @@ class _SearchWeatherWidgetState extends State<SearchWeatherWidget> {
     super.initState();
     // FETCH WEATHER DATA FROM API
     log("CITY : ${widget.city}");
-    context.read<SearchWeatherCubit>().fetchWeatherData(widget.city);
+    context.read<SearchWeatherCubit>().fetchWeatherData(widget.city.trim());
   }
 
   Future<void> refreshWeather() async {
-    context.read<SearchWeatherCubit>().fetchWeatherData(widget.city);
+    context.read<SearchWeatherCubit>().fetchWeatherData(widget.city.trim());
   }
 
   @override

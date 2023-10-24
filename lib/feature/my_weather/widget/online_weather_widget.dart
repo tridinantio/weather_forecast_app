@@ -39,73 +39,75 @@ class _OnlineWeatherWidgetState extends State<OnlineWeatherWidget> {
       onRefresh: refreshWeather,
       child: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const SizedBox(
-              height: 50,
-            ),
-            SearchBar(
-              controller: _searchWordController,
-              hintText: 'Search weather from other city',
-              hintStyle: MaterialStateProperty.all(
-                getBlackTextStyle(),
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SizedBox(
+                height: 20,
               ),
-              trailing: [
-                IconButton(
-                  icon: const Icon(Icons.search),
-                  onPressed: () {
-                    if (_searchWordController.text.isNotEmpty) {
-                      Navigator.pushNamed(
-                          context, SearchWeatherScreen.routeName,
-                          arguments: _searchWordController.text);
-                      _searchWordController.clear();
-                    }
-                  },
+              SearchBar(
+                controller: _searchWordController,
+                hintText: 'Search weather from other city',
+                hintStyle: MaterialStateProperty.all(
+                  getBlackTextStyle(),
                 ),
-              ],
-              onSubmitted: (value) {
-                Navigator.pushNamed(context, SearchWeatherScreen.routeName,
-                    arguments: value);
-                _searchWordController.clear();
-              },
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            CityAndDateWidget(
-              city: widget.weatherData.city!,
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            WeatherDataWidget(
-              currentWeatherData: widget.weatherData.list![0],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Column(
-              children: widget.weatherData.list!.map((data) {
-                //REMOVE NOW DATE/CURRENT DATE
-                DateTime currentDate = DateTime.now();
-                DateTime dataDate = data.dtTxt!;
-                String formattedCurrentDate =
-                    "${currentDate.year}-${currentDate.month}-${currentDate.day}";
-                String formattedDataDate =
-                    "${dataDate.year}-${dataDate.month}-${dataDate.day}";
+                trailing: [
+                  IconButton(
+                    icon: const Icon(Icons.search),
+                    onPressed: () {
+                      if (_searchWordController.text.isNotEmpty) {
+                        Navigator.pushNamed(
+                            context, SearchWeatherScreen.routeName,
+                            arguments: _searchWordController.text);
+                        _searchWordController.clear();
+                      }
+                    },
+                  ),
+                ],
+                onSubmitted: (value) {
+                  Navigator.pushNamed(context, SearchWeatherScreen.routeName,
+                      arguments: value);
+                  _searchWordController.clear();
+                },
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              CityAndDateWidget(
+                city: widget.weatherData.city!,
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              WeatherDataWidget(
+                currentWeatherData: widget.weatherData.list![0],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Column(
+                children: widget.weatherData.list!.map((data) {
+                  //REMOVE NOW DATE/CURRENT DATE
+                  DateTime currentDate = DateTime.now();
+                  DateTime dataDate = data.dtTxt!;
+                  String formattedCurrentDate =
+                      "${currentDate.year}-${currentDate.month}-${currentDate.day}";
+                  String formattedDataDate =
+                      "${dataDate.year}-${dataDate.month}-${dataDate.day}";
 
-                return formattedCurrentDate == formattedDataDate
-                    ? const SizedBox()
-                    : ForecastCardWidget(
-                        forecastday: data,
-                      );
-              }).toList(),
-            ),
-            const SizedBox(
-              height: 20,
-            )
-          ],
+                  return formattedCurrentDate == formattedDataDate
+                      ? const SizedBox()
+                      : ForecastCardWidget(
+                          forecastday: data,
+                        );
+                }).toList(),
+              ),
+              const SizedBox(
+                height: 20,
+              )
+            ],
+          ),
         ),
       ),
     );
