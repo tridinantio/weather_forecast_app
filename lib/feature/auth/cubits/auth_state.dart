@@ -11,10 +11,21 @@ final class AuthInitial extends AuthState {}
 
 final class AuthLoading extends AuthState {}
 
+final class AuthWithPhone extends AuthState {
+  final String verificationId;
+
+  const AuthWithPhone({required this.verificationId});
+
+  @override
+  // TODO: implement props
+  List<Object> get props => [verificationId];
+}
+
 final class AuthSuccess extends AuthState {
   final UserModel userData;
+  final String type;
 
-  const AuthSuccess({required this.userData});
+  const AuthSuccess({required this.userData, this.type = ""});
 
   @override
   // TODO: implement props
