@@ -1,16 +1,12 @@
 # weather_forecast_app
 
-A new Flutter project.
+ WELCOME TO Weather Forecast App
 
-## Getting Started
+ This app is developed using Flutter with MVVM design pattern, modular 
 
-This project is a starting point for a Flutter application.
+ To run the app:
+ - Simply install the apk file that is provided along with this test.
+ 0r
+ - Install it to using VSCode by opening this project and run it. You might want to install some of the plugins required for this project, simply pub get 
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
