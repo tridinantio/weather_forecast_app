@@ -29,5 +29,16 @@
  - Install it to using VSCode by opening this project and run it. You might want to install some of the plugins required for this project, simply pub get 
 
  The main functionality for this app is to show you the weather forecast for the next few days in hourly fashion. You can also search the weather forecast from other cities. It also comes with multiple authentication options like email & password, Google Account, and phone number with OTP, all utilizing Firebase Auth. Here are some preview of what you will see inside: 
+ ![1698220143229](https://github.com/tridinantio/weather_forecast_app/assets/93133790/1c0e0e04-d81d-4d3f-9900-840000038a82)
+
+ ![1698220143243](https://github.com/tridinantio/weather_forecast_app/assets/93133790/295ab60e-43ab-4748-a733-fb9ef7368d79)
+ 
+![1698220143201](https://github.com/tridinantio/weather_forecast_app/assets/93133790/c32e5f09-c253-4b12-8702-006cfb1b775b)
+
+![1698220143188](https://github.com/tridinantio/weather_forecast_app/assets/93133790/f9099390-5229-44c8-9e6e-d1e9cd2b5afd)
+
+![1698220143214](https://github.com/tridinantio/weather_forecast_app/assets/93133790/ef9bf9d5-8d91-4b26-b5ee-3e197f6d7761)
+
+
 
 
